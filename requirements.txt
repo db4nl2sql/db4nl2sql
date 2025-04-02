@@ -1,0 +1,11 @@
+openai
+func_timeout==4.3.5
+sqlparse==0.4.4
+pandas==2.2.0
+tqdm==4.66.2
+nltk==3.8.1
+python-dotenv==1.0.1
+cmake==3.28.3
+chromadb==0.4.22
+pyarrow==15.0.0
+opensearch-py==2.6.0
