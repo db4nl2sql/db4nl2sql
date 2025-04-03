@@ -33,10 +33,9 @@
    ```bash
     logging=0                        # 0 if False, 1 if True, log the prompt
     model='gpt-4o'                   # gpt-4o
-    mode='all'                       # all
+    mode='baseline'                  # baseline, baseline-w-desc, view
     num_cpus=4                       # # of cpus. Default 4. 
     result_file='predict_dev.json'   # The name of the result file. Should be json format.
-    max_refine_num=2                 # Maximum number of Self-Refinment iteration
 
     echo '''starting experiment...'''
     python3 ./src/nl2sql.py --logging ${logging} --model ${model} --mode ${mode} \
