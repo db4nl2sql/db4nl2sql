@@ -74,8 +74,8 @@ class SQLGenerator:
 
                     pattern = r'\b' + re.escape(old_col) + r'\b'
 
-                    if re.search(pattern, evidence):
-                        evidence = re.sub(pattern, f"`{new_col}`", evidence)
+                    # if re.search(pattern, evidence):
+                    #     evidence = re.sub(pattern, f"`{new_col}`", evidence)
                     # if re.search(pattern, qnl):
                     #     qnl = re.sub(pattern, f"`{new_col}`", qnl)
         
