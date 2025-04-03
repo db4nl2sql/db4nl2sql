@@ -1,7 +1,5 @@
 from util import util, const
 import re
-import sqlglot
-from sqlglot import exp
 
 class SQLGenerator:
     def __init__(self, setting, logger, rank, llm):
