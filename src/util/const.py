@@ -10,7 +10,7 @@ general_tip = '''## Remember the following caution and do not make same mistakes
 # 6. Try to use DISTINCT if possible.
 # 7. Please make sure to verify that the table-column matches in the generated SQL statement are correct. Every column used must exist in the corresponding table.
 # 8. If there is no example of a column value, it likely indicates that the column is of a numeric type—please make sure to take this into account. 
-     For example, even if a column name ends with something like 'YN', if there is no example provided in the column example, it means the values are represented as 0 and 1—so be sure to treat it as numeric (Boolean) accordingly.
+     For example, even if a column name ends with something like 'YN', if there is no example provided for that column, it usually means the values are represented as 0 and 1—so be sure to treat it as a numeric (Boolean) field.
 '''
 
 general_tip_uv = '''## Remember the following caution and do not make same mistakes:
@@ -33,6 +33,7 @@ Please follow these guidelines:
    - Concise (within 20 to 50 characters),
    - Descriptive enough to convey the column's meaning,
    - And include format/type indicators (e.g., _YYYY_MM_DD ).
+   - column
 3. Even if a column is not renamed, you must include it in the mapping for completeness.
 4. For each table, return a JSON object with the following fields:
    - "table_name": the original table name,
@@ -40,6 +41,9 @@ Please follow these guidelines:
    - "schema_text": a simplified textual representation of the view schema in the format: table_name(renamed_column1, renamed_column2, ...),
    - "column_mapping": a list of [original_column_name, final_column_name] pairs for **all** columns in the table.
 5. Avoid duplicate columns in the resulting view. If semantically similar columns appear in different tables, embed the table name into the column name to avoid duplication.
+6. If there is no example of a column value, it likely indicates that the column is of a numeric type—please make sure to take this into account. 
+     For example, even if a column name ends with something like 'YN', if there is no example provided for that column, it usually means the values are represented as 0 and 1—so be sure to treat it as a numeric (Boolean) field.
+     Also, if a column has a generic noun-like name such as 'School' or 'contents' and no example values are provided, it is very likely to represent an ID or key.
 
 
 The "column_mapping" and "schema_text" should include every column in the view, whether it was renamed or not. 

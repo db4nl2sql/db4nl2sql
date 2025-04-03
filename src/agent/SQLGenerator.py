@@ -76,8 +76,8 @@ class SQLGenerator:
 
                     if re.search(pattern, evidence):
                         evidence = re.sub(pattern, f"`{new_col}`", evidence)
-                    if re.search(pattern, qnl):
-                        qnl = re.sub(pattern, f"`{new_col}`", qnl)
+                    # if re.search(pattern, qnl):
+                    #     qnl = re.sub(pattern, f"`{new_col}`", qnl)
         
 
         prompt = const.final_prompt.format(
